@@ -21,8 +21,14 @@ buildVendors = ->
 	cssFiles = fs.readdirSync directory+'css/'
 	cssFiles = (p.resolve(directory+'css/',fl) for fl in cssFiles)[...]
 
+	# Add CWPlayer styles!
+	cssFiles.push p.resolve(directory+'CWPlayer/styles.css')
+
 	jsFiles = fs.readdirSync directory+'js/'
-	jsFiles = (p.resolve(directory+'js/',fl) for fl in jsFiles)[...] 
+	jsFiles = (p.resolve(directory+'js/',fl) for fl in jsFiles)[...]
+
+	# Add CWPlayer library!
+	jsFiles.push p.resolve(directory+'CWPlayer/CrosswordJS.js')
 
 	for filepath in cssFiles when filepath.match /\.css$/i
 		cssStr += fs.readFileSync(filepath)+'\n'

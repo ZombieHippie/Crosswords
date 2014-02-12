@@ -40,9 +40,9 @@ if app.get('env') is 'development'
 	}
 
 # Setup MongoDB
-mongoose.connect 'mongodb://localhost/app'
+#mongoose.connect 'mongodb://localhost/app'
 db = {}
-db["User"] = mongoose.model 'User', require('./models/User'), 'users'
+db["User"] = null#mongoose.model 'User', require('./models/User'), 'users'
 
 # Routes
 routes = require('./routes')

@@ -1,0 +1,3 @@
+[submodule "vendor/CWPlayer"]
+	path = vendor/CWPlayer
+	url = https://github.com/Xcqtion/CWplayer.git

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .container
+    h1="Crossword Writer"
+    #game
+    ul#AcrossQuestions.quiz
+    ul#DownQuestions.quiz
+
+block footer
+  script.
+    init();

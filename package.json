@@ -1,6 +1,6 @@
 {
-  "name": "hatchling",
-  "version": "0.0.2",
+  "name": "Crosswords",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "coffee app.coffee"
@@ -17,6 +17,6 @@
     "methodder": "0.0.3"
   },
   "devDependencies": {
-    "devreload": "0.1.0"
+    "devreload": "0.1.2"
   }
 }
