@@ -43,6 +43,7 @@ if app.get('env') is 'development'
 mongoose.connect 'mongodb://localhost/app'
 db = {}
 db["User"] = mongoose.model 'User', require('./models/User'), 'users'
+db["Crossword"] = mongoose.model 'Crossword', require('./models/Crossword'), 'crosswords'
 
 # Routes
 routes = require('./routes')

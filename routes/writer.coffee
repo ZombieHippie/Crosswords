@@ -9,14 +9,11 @@ module.exports = class Writer
         title: 'Write a crossword'
         user: req.session.user}
   post: (req,res) =>
-    @writer req.body.username, req.body.password, (err, crossword)->
-      console.log {err} if err
+    return
+    crossword = new @db.Crossword req
+    crossword.save (err, crossword)->
       if crossword
           # wrote the crossword
           res.redirect('/')
       else
         res.redirect '/writer?failed'
-  writer: (user, crossword, fn) =>
-    return fn null, null
-    # do something with crossword
-    @db.CrossWord

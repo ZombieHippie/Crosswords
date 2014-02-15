@@ -10,9 +10,11 @@ module.exports = class Index
 		@verify = new (require('./verify'))(@app, @db)
 		@writer = new (require('./writer'))(@app, @db)
 	get: (req, res) =>
-		res.render('index', {
-			title: 'Inkblur'
-			user: req.session.user
-		})
+		@db.Crossword.find {}, "name user date", (err, data)->
+			res.render('index', {
+				title: 'Inkblur'
+				user: req.session.user
+				crosswords: data
+			})
 	post: (req, res) =>
 		console.log req.body

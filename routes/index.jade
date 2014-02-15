@@ -2,15 +2,12 @@ extends views/layout
 
 block content
 	.jumbotron
-		h1#out Hello
-		p#output Hello
+		h1#out Crossword Player
+		p#output create and play on different crossword puzzles
 	.container
-		-var nDate = (new Date()).toString()
-		-var posts={Home:{content:"Look at <a title=\"ZombieHippie.com\" href=\"//zombiehippie.com\">my primary website</a>",date:nDate},Contact:{content:"You can contact me <a href=\"//twitter.com/inkblur\" title=\"@inkblur\">via twitter</a>",date:nDate}}
-		each v, k in posts
-			article
-				header
-					h1=k
-					p=v.date.replace(/(^.*?)\s\d+:.*$/,"$1")
-				section
-					p!=v.content
+		each cw in crosswords
+			-var loc = "/play/"+cw.user+'/'+cw.name
+			a.col-xs-12.col-sm-6.col-md-4(href=loc)
+				h1=cw.name
+				p="by: "+cw.user
+				p=cw.date.replace(/(^.*?)\s\d+:.*$/,"$1")
