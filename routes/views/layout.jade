@@ -18,6 +18,10 @@ html
 						li
 							a
 								strong='@'+user.name
+						if user.key === null
+							each v, k in rnav
+								li
+									a(href=v)=k
 						li
 							a(href="/logout")="Logout"
 					else
@@ -29,4 +33,5 @@ html
 	footer
 		script(src='/js/vendors.js')
 		script(src='/js/script.js')
+		script(src='//localhost/devreload.js')
 		block footer

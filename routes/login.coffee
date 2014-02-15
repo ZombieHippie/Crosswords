@@ -1,11 +1,10 @@
 hash = require('../pass').hash
-m = require 'methodder'
 
 module.exports = class Login
 	constructor:(@app, @db)->
-		@app.get '/login', m @get, @
-		@app.post '/login', m @post, @
-		@app.all '/logout', m @logout, @
+		@app.get '/login', @get
+		@app.post '/login', @post
+		@app.all '/logout', @logout
 	get: (req, res)=>
 		res.render 'login.jade', {
 				title: 'Login to Inkblur'
@@ -34,7 +33,7 @@ module.exports = class Login
 			res.redirect('/')
 
 	authenticate: (name, pass, fn)=>
-		@db.User.findOne {name}, 'name salt hash', (err, user) ->
+		@db.User.findOne {name}, 'name salt hash key', (err, user) ->
 			return fn(err) if err
 			# query the db for the given username
 			if (!user)

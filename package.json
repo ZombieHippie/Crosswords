@@ -14,6 +14,7 @@
     "nib":"1.0.x",
     "stylus": "0.42.x",
     "nodemon": "1.0.x",
+    "nodemailer": "0.6.x",
     "methodder": "0.0.3"
   },
   "devDependencies": {

@@ -1,6 +1,7 @@
 module.exports = {
-	name:	String
-	online:	Boolean
-	hash:	String
-	salt:	String
+  name: String
+  hash: String
+  salt: String
+  email: String
+  key: Number
 }

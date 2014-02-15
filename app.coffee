@@ -12,7 +12,7 @@ app = express()
 
 # all environments
 app.set('port', process.env.PORT || 3000)
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, 'routes'))
 app.set('view engine', 'jade')
 app.locals.pretty = true; # Pretty output from jade
 
@@ -40,9 +40,9 @@ if app.get('env') is 'development'
 	}
 
 # Setup MongoDB
-#mongoose.connect 'mongodb://localhost/app'
+mongoose.connect 'mongodb://localhost/app'
 db = {}
-db["User"] = null#mongoose.model 'User', require('./models/User'), 'users'
+db["User"] = mongoose.model 'User', require('./models/User'), 'users'
 
 # Routes
 routes = require('./routes')

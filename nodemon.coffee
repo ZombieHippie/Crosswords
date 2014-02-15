@@ -28,7 +28,7 @@ checkGen = (callback)->
     checkGenVendors callback
 start = ->
   ext = 'jade coffee'
-  watch = ['routes/','views/','app.coffee']
+  watch = ['routes/','app.coffee']
   if '--genvendors' in process.argv
     watch.push 'vendors/'
     ext += ' js css'

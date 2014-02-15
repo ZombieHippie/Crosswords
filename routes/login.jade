@@ -1,4 +1,4 @@
-extends layout
+extends views/layout
 
 block content
 	.container
@@ -9,8 +9,9 @@ block content
 		form(role="form",method="POST")
 			.form-group
 				input.form-control(name="username",type="text",placeholder="Username")
-				input.form-control(name="password",type="password")
+				input.form-control(name="password",type="password",placeholder="Password")
 				if isNew
+					input.form-control(name="email",type="email",placeholder="Email")
 					input.btn.btn-success.pull-right(type="submit",value="Register")
 				else
 					input.btn.btn-success.pull-right(type="submit",value="Login")
